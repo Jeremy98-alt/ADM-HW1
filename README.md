@@ -10,7 +10,7 @@ This is a platform that provide us many exercises to do in a deadline decided by
 ## Types of exercises
 There are different types of exercises that we should done until the deadline.
 
-# PROBLEM 1 (Basics of Python)
+PROBLEM 1 (Basics of Python)
 * Introduction (all – total: 7 - max points: 75)
 * Numpy (all – total: 15 - max points: 300)
 * Sets (all – total: 13 - max points: 170)
@@ -25,7 +25,7 @@ There are different types of exercises that we should done until the deadline.
 * Strings (all – total: 14 - max points: 220)
 * Regex and Parsing challenges (all – total: 17 - max points: 560)
 
-# PROBLEM 2 (Challenges)
+PROBLEM 2 (Challenges)
 * https://www.hackerrank.com/challenges/birthday-cake-candles
 * https://www.hackerrank.com/challenges/kangaroo
 * https://www.hackerrank.com/challenges/strange-advertising
