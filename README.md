@@ -4,7 +4,7 @@ The first homework that I made for ADM, a Data Science's course at La Sapienza 2
 ## What's the main goal for this homework-1?
 The main goal is to achieve the main basic skills to program with python
 
-### What's HackeRank?
+### What's HackerRank?
 This is a platform that provide us many exercises to do in a deadline decided by professor!
 
 ## Types of exercises
