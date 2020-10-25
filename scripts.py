@@ -4,6 +4,12 @@ print("Hello, World!")
 
 # Python If-Else
 
+import math
+import os
+import random
+import re
+import sys
+
 if __name__ == '__main__':
     n = int(input().strip())
 
@@ -50,6 +56,9 @@ import calendar
 
 def is_leap(year):    
     return calendar.isleap(year)
+
+year = int(input())
+print(is_leap(year))
 
 # Print Function
 
@@ -169,6 +178,11 @@ if __name__ == '__main__':
 def swap_case(s):
     return s.swapcase()
 
+if __name__ == '__main__':
+    s = input()
+    result = swap_case(s)
+    print(result)
+
 # String Split and Join
 
 def split_and_join(line):
@@ -176,10 +190,20 @@ def split_and_join(line):
     line = "-".join(line)
     return line
 
+if __name__ == '__main__':
+    line = input()
+    result = split_and_join(line)
+    print(result)
+
 # What's Your Name?
 
 def print_full_name(a, b):
     print(f"Hello {a} {b}! You just delved into python.")
+
+if __name__ == '__main__':
+    first_name = input()
+    last_name = input()
+    print_full_name(first_name, last_name)
 
 # Mutations
 
@@ -188,6 +212,12 @@ def mutate_string(string, position, character):
     s[position] = character
     string = ''.join(s)
     return string
+
+if __name__ == '__main__':
+    s = input()
+    i, c = input().split()
+    s_new = mutate_string(s, int(i), c)
+    print(s_new)
 
 # Find a string
 
@@ -199,6 +229,13 @@ def count_substring(string, sub_string):
         i = string.find(sub_string, i+1)
 
     return count
+
+if __name__ == '__main__':
+    string = input().strip()
+    sub_string = input().strip()
+    
+    count = count_substring(string, sub_string)
+    print(count)
 
 # String Validators
 
@@ -239,6 +276,11 @@ import textwrap
 def wrap(string, max_width):
     return textwrap.fill(string,max_width)
 
+if __name__ == '__main__':
+    string, max_width = input(), int(input())
+    result = wrap(string, max_width)
+    print(result)
+
 # Designer Door Mat
 
 n, m = map(int, input().split())
@@ -256,20 +298,35 @@ for i in range(n-2,-1,-2):
 
 #(I saw the code in terms logic way to put the correct distances, in this case there was a "bug" to display the outcomes)
 def print_formatted(number):
+    # your code goes here
     width = len("{0:b}".format(number))
     for i in range(1,n+1):
         print("{0:{width}d} {0:{width}o} {0:{width}X} {0:{width}b}".format(i, width=width))
+
+if __name__ == '__main__':
+    n = int(input())
+    print_formatted(n)
 
 # Alphabet Rangoli
 
 #(I saw the code in terms logic way, in this case there was a "bug" to display the outcomes)
 def print_rangoli(size):
+    # your code goes here
     strAlph = 'abcdefghijklmnopqrstuvwxyz'[0:size]
     
     for i in range(size-1, -size, -1):
         print ("--"*abs(i)+ '-'.join(strAlph[size:abs(i):-1] + strAlph[abs(i):size])+"--"*abs(i))
 
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
+
 # Capitalize!
+import math
+import os
+import random
+import re
+import sys
 
 def solve(s):
     inp = s.split(" ")
@@ -279,6 +336,17 @@ def solve(s):
         wrdF += w.capitalize() + " "
 
     return wrdF
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = solve(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
 
 # The Minion Game
 
@@ -298,6 +366,10 @@ def minion_game(string):
         print("Stuart", SScore)
     else:
         print("Draw")
+ 
+if __name__ == '__main__':
+    s = input()
+    minion_game(s)
 
 # Merge the Tools!
 
@@ -308,11 +380,21 @@ def merge_the_tools(string, k):
             if y not in subs:
                 subs += y          
         print(subs)
+        
+if __name__ == '__main__':
+    string, k = input(), int(input())
+    merge_the_tools(string, k)
 
 # Introduction to Sets
 
 def average(array):
     return sum(set(array))/len(set(array))
+
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    result = average(arr)
+    print(result)
 
 # No Idea!
 
@@ -705,6 +787,10 @@ def fibonacci(n):
             fib_list.append(fib_list[i-1] + fib_list[i-2])
     return fib_list
 
+if __name__ == '__main__':
+    n = int(input())
+    print(list(map(cube, fibonacci(n))))
+
 # Detect Floating Point Number
 
 import re
@@ -715,6 +801,9 @@ for _ in range(int(input())):
 # Re.split()
 
 regex_pattern = r"[,.]+"
+
+import re
+print("\n".join(re.split(regex_pattern, input())))
 
 # Group(), Groups() & Groupdict()
 
@@ -768,6 +857,9 @@ for _ in range(int(input())):
 # Validating Roman Numerals
 
 regex_pattern = r"^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$"
+
+import re
+print(str(bool(re.match(regex_pattern, input()))))
 
 # Validating phone numbers
 
@@ -893,6 +985,12 @@ for _ in range(int(input())):
 regex_integer_in_range = r"^[1-9][0-9]{5}$"	# Do not delete 'r'.
 regex_alternating_repetitive_digit_pair = r"(\d)(?=.\1)"	# Do not delete 'r'.
 
+import re
+P = input()
+
+print (bool(re.match(regex_integer_in_range, P)) 
+and len(re.findall(regex_alternating_repetitive_digit_pair, P)) < 2)
+
 # Matrix Script
 
 first_multiple_input = input().rstrip().split()
@@ -912,13 +1010,25 @@ print(re.sub(r"(?<=\w)([^\w]+)(?=\w)", " ", b))
 
 # XML 1 - Find the Score
 
+import sys
+import xml.etree.ElementTree as etree
+
 def get_attr_number(node):
     sm = 0
     for children in node.iter():
         sm += len(children.attrib)
     return sm
 
+if __name__ == '__main__':
+    sys.stdin.readline()
+    xml = sys.stdin.read()
+    tree = etree.ElementTree(etree.fromstring(xml))
+    root = tree.getroot()
+    print(get_attr_number(root))
+
 # XML2 - Find the Maximum Depth
+
+import xml.etree.ElementTree as etree
 
 maxdepth = 0
 def depth(elem, level):
@@ -927,6 +1037,15 @@ def depth(elem, level):
         maxdepth += 1
     for child in elem:
         depth(child, level + 1) 
+        
+if __name__ == '__main__':
+    n = int(input())
+    xml = ""
+    for i in range(n):
+        xml =  xml + input() + "\n"
+    tree = etree.ElementTree(etree.fromstring(xml))
+    depth(tree.getroot(), -1)
+    print(maxdepth)
 
 # Standardize Mobile Number Using Decorators
 
@@ -935,6 +1054,15 @@ def wrapper(f):
        f(["+91 " + digits[-10:-5] + " " + digits[-5:] for digits in l])
     return fun
 
+@wrapper
+def sort_phone(l):
+    print(*sorted(l), sep='\n')
+
+if __name__ == '__main__':
+    l = [input() for _ in range(int(input()))]
+    sort_phone(l) 
+
+
 # Decorators 2 - Name Directory
 
 def person_lister(f):
@@ -942,11 +1070,25 @@ def person_lister(f):
         return map(f, people.sort(key=operator.itemgetter(2)))
     return inner
 
+@person_lister
+def name_format(person):
+    return ("Mr. " if person[3] == "M" else "Ms. ") + person[0] + " " + person[1]
+
+if __name__ == '__main__':
+    people = [input().split() for i in range(int(input()))]
+    print(*name_format(people), sep='\n')
+
 # Arrays
+
+import numpy
 
 def arrays(arr):
     a = numpy.array(arr, float)
     return a[::-1]
+
+arr = input().strip().split(' ')
+result = arrays(arr)
+print(result)
 
 # Shape and Reshape
 
@@ -1108,6 +1250,12 @@ print(numpy.linalg.det(a))
 
 # Birthday Cake Candles
 
+import math
+import os
+import random
+import re
+import sys
+
 def birthdayCakeCandles(candles):
     max_candle = max(candles)
 
@@ -1118,12 +1266,56 @@ def birthdayCakeCandles(candles):
 
     return counter
 
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    candles_count = int(input().strip())
+
+    candles = list(map(int, input().rstrip().split()))
+
+    result = birthdayCakeCandles(candles)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
 # Number Line Jumps
+
+import math
+import os
+import random
+import re
+import sys
 
 def kangaroo(x1, v1, x2, v2):
     return("YES" if (v1 > v2) and (x2-x1)%(v1-v2) == 0 else "NO")
 
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    x1V1X2V2 = input().split()
+
+    x1 = int(x1V1X2V2[0])
+
+    v1 = int(x1V1X2V2[1])
+
+    x2 = int(x1V1X2V2[2])
+
+    v2 = int(x1V1X2V2[3])
+
+    result = kangaroo(x1, v1, x2, v2)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+
 # Viral Advertising
+
+import math
+import os
+import random
+import re
+import sys
 
 def viralAdvertising(n):
     start_people = 5
@@ -1134,7 +1326,24 @@ def viralAdvertising(n):
         start_people = start_people*3
     return cumulative
 
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    result = viralAdvertising(n)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
 # Recursive Digit Sum
+
+import math
+import os
+import random
+import re
+import sys
 
 def superDigit(n, k):
     if(len(list(map(int, n))) > 1):
@@ -1142,8 +1351,29 @@ def superDigit(n, k):
         return superDigit(str(new_digit), 1)
     else:
         return int(n)
+  
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    nk = input().split()
+
+    n = nk[0]
+
+    k = int(nk[1])
+
+    result = superDigit(n, k)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
 
 # Insertion Sort - Part 1
+
+import math
+import os
+import random
+import re
+import sys
 
 def stamp(arr):
     for elem in arr:
@@ -1160,8 +1390,21 @@ def insertionSort1(n, arr):
             j -= 1
         arr[j+1] = x
     stamp(arr)
+  
+if __name__ == '__main__':
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    insertionSort1(n, arr)
 
 # Insertion Sort - Part 2
+
+import math
+import os
+import random
+import re
+import sys
 
 def stamp(arr):
     for elem in arr:
@@ -1177,4 +1420,11 @@ def insertionSort2(n, arr):
             j -= 1
         arr[j+1] = x
         stamp(arr)
+        
+if __name__ == '__main__':
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    insertionSort2(n, arr)
 
